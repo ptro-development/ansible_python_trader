@@ -6,9 +6,8 @@ if ! grep python_trader_nodes /etc/ansible/hosts > /dev/null
 then
     echo "
 [python_trader_nodes]
-loalhost
+localhost
 " >> /etc/ansible/hosts
 fi
 
-su - ansible -c "git clone https://github.com/ptro-development/ansible_python_trader.git /home/ansible/ansible_python_trader"
-su - ansible -c "ansible-playbook /home/ansible/ansible_python_trader/roles/python_trader_nodes.yml"
+service sshd restart && su - ansible -c "git clone https://github.com/ptro-development/ansible_python_trader.git /home/ansible/ansible_python_trader && ansible-playbook /home/ansible/ansible_python_trader/roles/python_trader_nodes.yml"
