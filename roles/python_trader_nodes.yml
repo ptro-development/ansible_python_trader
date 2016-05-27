@@ -1,0 +1,8 @@
+--- # Python trader project settings.
+- hosts: python_trader_nodes
+  user: ansible
+  sudo: yes
+  connection: ssh
+  gather_facts: false
+  roles:
+   - python_trader_nodes
