@@ -3,6 +3,7 @@
     with_items:
     - python-amqplib
     - python-amqp
+    - pydot
     - redis
     - numpy
     - scipy
